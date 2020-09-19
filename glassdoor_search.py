@@ -4,12 +4,9 @@ import requests
 from bs4 import BeautifulSoup
 import lxml
 
-#https: // www.glassdoor.com/Job/jobs.htm?suggestCount = 0 & suggestChosen = false & clickSource = searchBtn & typedKeyword = human+resources & locT = C & locId = 1155695 & jobType = &context = Jobs & sc.keyword = human+resources & dropdown = 0
-
-url = "https://www.glassdoor.com/Job/jobs.htm?suggestCount=0&suggestChosen=false&clickSource=searchBtn&typedKeyword=human+resources&locT=C&locId=1155695&jobType=&context=Jobs&sc.keyword=human+resources&dropdown=0"
+url = 'https://www.glassdoor.com/Job/suwanee-human-resources-jobs-SRCH_IL.0,7_IC1155695_KE8,23.htm?'
 
 reqs = requests.get(url)
+soup = BeautifulSoup(reqs.text, 'lxml')
 
-soup = BeautifulSoup(reqs.text, "lxml")
-
-print(soup.find_all("span"))
+print(soup.find_all('span'))
