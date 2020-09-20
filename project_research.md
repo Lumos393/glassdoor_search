@@ -7,3 +7,7 @@ https://realpython.com/beautiful-soup-web-scraper-python/
 https://www.glassdoor.com/developer/index.htm
 https://www.dataquest.io/blog/python-api-tutorial/
 
+
+API Notes
+---------------------------------------------------
+import requests
