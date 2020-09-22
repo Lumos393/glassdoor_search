@@ -1,8 +1,6 @@
-from re import findall
-from bs4 import BeautifulSoup
+from re import error, findall
+from bs4 import BeautifulSoup, element
 from urllib.request import urlopen, Request
-from bs4 import element
-from requests.api import request
 
 user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
 
@@ -15,9 +13,10 @@ page = urlopen(req)
 html_bytes = page.read()
 soup = BeautifulSoup(html_bytes, 'html.parser')
 #strhtm = soup.prettify()
-mysoup = soup.findAll('li', {'class': 'jl react-job-listing gdGrid'})
 
-mysoupy = soup.attrs.fromkeys(mysoup)
+soupy_mess = []
 
-for x in mysoup:
-    print(x, '\n')
+for li in soup.findAll('li', {'class': 'jl react-job-listing gdGrid'}):
+    soupy_mess.append(li['data-normalize-job-title'])
+
+print(soupy_mess)
