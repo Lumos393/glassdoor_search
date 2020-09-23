@@ -18,5 +18,6 @@ soupy_mess = []
 
 for li in soup.findAll('li', {'class': 'jl react-job-listing gdGrid'}):
     soupy_mess.append(li['data-normalize-job-title'])
+    soupy_mess.append(soup.find('span'))
 
 print(soupy_mess)
